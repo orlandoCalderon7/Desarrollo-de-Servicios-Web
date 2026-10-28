@@ -13,7 +13,7 @@ Console.WriteLine("===========================================================")
 
 // 1. ABSTRACCIÓN Y ENCAPSULAMIENTO
 Encapsulamiento encapsulamiento = new Encapsulamiento();
-encapsulamiento.probarEncapsulamientoBasico();
+//encapsulamiento.probarEncapsulamientoBasico();
 //encapsulamiento.probarInvariantesValidacion();
 
 // 2. HERENCIA Y POLIMORFISMO
