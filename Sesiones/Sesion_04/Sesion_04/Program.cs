@@ -33,4 +33,4 @@ RecordsModernos records = new RecordsModernos();
 
 // 5. TALLER OFICIAL T01: GUÍA PRÁCTICA 1 (CASO SHOPNOW)
 LaboratorioShopNow shopNow = new LaboratorioShopNow();
-//shopNow.ejecutarCasoShopNow();
+shopNow.ejecutarCasoShopNow();

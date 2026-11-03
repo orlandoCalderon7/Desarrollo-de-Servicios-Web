@@ -24,7 +24,7 @@ public class Encapsulamiento
         Console.WriteLine($"Subtotal por 2 unidades: S/ {prod2.CalcularSubtotal(2):F2}");
 
         // NOTA: La siguiente línea daría error de compilación porque 'Precio' tiene accesor 'init'
-        // prod1.Precio = -50; // Error CS8852: Init-only property cannot be assigned outside constructor
+        //prod1.Precio = -50; // Error CS8852: Init-only property cannot be assigned outside constructor
     }
 
     public void probarInvariantesValidacion()
@@ -49,6 +49,7 @@ public class Encapsulamiento
 /// </summary>
 public class Producto
 {
+
     public int Id { get; init; }
     public string Nombre { get; init; }
     public decimal Precio { get; init; }

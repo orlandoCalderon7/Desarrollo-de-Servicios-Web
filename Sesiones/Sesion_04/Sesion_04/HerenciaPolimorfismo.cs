@@ -34,6 +34,7 @@ public class HerenciaPolimorfismo
             new Gato("Pelusa", 7),
             new Perro("Rocky", "Golden Retriever"),
             new Gato("Michi", 5),
+            new Paloma("Piolin", "Nueva York"),
             new Mascota("Animal Silvestre")
         ];
 
@@ -85,5 +86,16 @@ public class Gato(string nombre, int vidas) : Mascota(nombre)
     public override void EmitirSonido()
     {
         Console.WriteLine($"¡Miau! Tengo {Vidas} vidas.");
+    }
+}
+
+
+public class Paloma(string nombre, string ciudad) : Mascota(nombre)
+{
+    public string Ciudad { get; } = ciudad;
+
+    public override void EmitirSonido()
+    {
+        Console.WriteLine($"¡Gruuu! Vico en {Ciudad}.");
     }
 }
