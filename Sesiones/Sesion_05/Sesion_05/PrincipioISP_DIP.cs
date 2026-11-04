@@ -29,6 +29,14 @@ public class PrincipioISP_DIP
         var procesadorSms = new AdopcionProcesador(canalSms);
 
         procesadorSms.Procesar(solicitud);
+
+        // 3. Mock
+        Console.WriteLine("\n-> Cambiando canal de comunicación a Mock en tiempo de ejecución...");
+        INotificadorServicio canalMock = new MockNotificadorServicio();
+        var procesadorMock = new AdopcionProcesador(canalMock);
+
+        procesadorMock.Procesar(solicitud);
+
     }
 }
 
@@ -39,7 +47,7 @@ public record SolicitudAdopcion(int Id, string Mascota, string Contacto);
 /// </summary>
 public interface INotificadorServicio
 {
-    void EnviarNotificacion(string destino, string mensaje);
+    void EnviarNotificacion(string destino, string mensaje); //Abstraccion
 }
 
 /// <summary>
@@ -47,7 +55,7 @@ public interface INotificadorServicio
 /// </summary>
 public class EmailNotificadorServicio : INotificadorServicio
 {
-    public void EnviarNotificacion(string destino, string mensaje)
+    public void EnviarNotificacion(string destino, string mensaje) //Implementacion
     {
         Console.WriteLine($"[EMAIL -> {destino}]: {mensaje}");
     }
@@ -60,7 +68,15 @@ public class SmsNotificadorServicio : INotificadorServicio
 {
     public void EnviarNotificacion(string destino, string mensaje)
     {
-        Console.WriteLine($"[SMS -> {destino}]: {mensaje}");
+        Console.WriteLine($"[SMS -> {destino}]: {mensaje}"); 
+    }
+}
+
+public class MockNotificadorServicio : INotificadorServicio
+{
+    public void EnviarNotificacion(string destino, string mensaje)
+    {
+        Console.WriteLine($"[Mock -> {destino}]: {mensaje}");
     }
 }
 

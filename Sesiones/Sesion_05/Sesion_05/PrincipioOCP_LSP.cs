@@ -22,7 +22,8 @@ public class PrincipioOCP_LSP
         List<IDescuentoEstrategia> estrategias = [
             new DescuentoEstudiante(),
             new DescuentoCampaniaNavidad(),
-            new DescuentoSinDescuento()
+            new DescuentoSinDescuento(),
+            new DescuentoAnioNuevo()
         ];
 
         Console.WriteLine($"Costo base de atención veterinaria: S/ {costoBaseServicio:F2}\n");
@@ -70,4 +71,10 @@ public class DescuentoSinDescuento : IDescuentoEstrategia
 {
     public string Descripcion => "Tarifa Regular (0% OFF)";
     public decimal AplicarDescuento(decimal montoBase) => montoBase;
+}
+
+public class DescuentoAnioNuevo : IDescuentoEstrategia
+{
+    public string Descripcion => "Descuento año nuevo (40% OFF)";
+    public decimal AplicarDescuento(decimal montoBase) => montoBase * 0.60m;
 }

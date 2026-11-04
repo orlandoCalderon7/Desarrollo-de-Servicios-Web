@@ -13,7 +13,7 @@ Console.WriteLine("===========================================================")
 
 // 1. PRINCIPIO DE RESPONSABILIDAD ÚNICA (SRP)
 PrincipioSRP srp = new PrincipioSRP();
-srp.ejecutarDemostracion();
+//srp.ejecutarDemostracion();
 
 // 2. PRINCIPIOS OPEN/CLOSED (OCP) Y LISKOV (LSP)
 PrincipioOCP_LSP ocpLsp = new PrincipioOCP_LSP();
@@ -29,4 +29,4 @@ CiclosDeVidaIoC ioc = new CiclosDeVidaIoC();
 
 // 5. CLEAN ARCHITECTURE EN 4 CAPAS (CASO ADOPTAMAS)
 CleanArchitectureDemo cleanArch = new CleanArchitectureDemo();
-//cleanArch.ejecutarDemostracion();
+cleanArch.ejecutarDemostracion();

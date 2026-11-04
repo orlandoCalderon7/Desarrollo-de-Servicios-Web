@@ -17,7 +17,7 @@ public class PrincipioSRP
         Console.WriteLine("=======================================================");
 
         // Creación del objeto de negocio
-        var orden = new Orden(101, "Carlos Mendoza", 120.00m);
+        var orden = new Orden(101, "", 120.00m);
 
         // Cada clase se encarga estrictamente de su propósito:
         var validador = new OrdenValidador();
